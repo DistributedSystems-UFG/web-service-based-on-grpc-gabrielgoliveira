@@ -31,6 +31,18 @@ def run():
         response = stub.ListAllEmployees(EmployeeService_pb2.EmptyMessage())
         print ('All employees: ' + str(response))
 
+        # List all seniors employees
+        response = stub.GetEmployeesSeniors(EmployeeService_pb2.EmptyMessage())
+        print ('All seniors employees: ' + str(response))
+
+        # Update employee name
+        response = stub.UpdateEmployeeName(EmployeeService_pb2.EmployeeNameUpdate(id=101, name="Gabriel"))
+        print ('Employee name updated: ' + str(response))
+
+        # List all tech lead employees
+        response = stub.GetEmployeesTechLeaders(EmployeeService_pb2.EmptyMessage())
+        print ('All tech leaders employees: ' + str(response))
+
 if __name__ == '__main__':
     logging.basicConfig()
     run()

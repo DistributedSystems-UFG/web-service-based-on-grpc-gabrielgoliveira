@@ -10,14 +10,27 @@ package employee_service;
 service EmployeeService {
   // Create an employee record
   rpc CreateEmployee (EmployeeData) returns (StatusReply) {}
+
   // Get an employee´s data
   rpc GetEmployeeDataFromID (EmployeeID) returns (EmployeeData) {}
+
   // Update an employee´s title/position
   rpc UpdateEmployeeTitle (EmployeeTitleUpdate) returns (StatusReply) {}
+
   // Delete an employee
   rpc DeleteEmployee (EmployeeID) returns (StatusReply) {}
+
   // List all employees
   rpc ListAllEmployees (EmptyMessage) returns (EmployeeDataList) {}
+
+  // list all seniors employees
+  rpc GetEmployeesSeniors (EmptyMessage) returns (EmployeeDataList) {}
+
+  // list all seniors employees
+  rpc GetEmployeesTechLeaders (EmptyMessage) returns (EmployeeDataList) {}
+
+  // update name employee
+  rpc UpdateEmployeeName (EmployeeNameUpdate) returns (EmployeeData) {}
   
 }
 
@@ -38,6 +51,11 @@ message EmployeeID {
 message EmployeeTitleUpdate {
   uint32 id = 1;
   string title = 2;
+}
+
+message EmployeeNameUpdate {
+  uint32 id = 1;
+  string name = 2;
 }
 
 message EmptyMessage{}
