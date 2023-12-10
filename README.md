@@ -41,3 +41,16 @@ $:> python3 EmployeeService.py
 $:> python3 EmployeeClient.py
 
 ### Note: open port 50051 on the firewall at EC2 (security group)
+
+
+Segue Resultados :
+
+Alteração das regras de firewall na aws para liberação da porta :
+
+<img src="./Screenshot from 2023-12-10 01-36-19.png"/>
+
+
+
+Resultados da execução com a implementação dos novos serviços :
+
+<img src="./Screenshot from 2023-12-10 01-36-54.png"/>
